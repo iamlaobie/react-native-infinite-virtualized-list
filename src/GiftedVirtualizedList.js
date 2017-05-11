@@ -42,6 +42,12 @@ export default class GiftedVirtualizedList extends React.Component {
   }
 
   @autobind
+  removeItem(item) {
+    this.state.list.splice(this.state.list.indexOf(item), 1)
+    this.setState({list: this.state.list})
+  }
+
+  @autobind
   refresh() {
     this.setState({
       list: [],
